@@ -1,6 +1,6 @@
 #include "RNM_NodeScanner.h"
 #include "ResourceNodeMarker.h"
-#include "FGResourceDescriptor.h"
+#include "Resources/FGResourceDescriptor.h"
 
 void RNM_NodeScanner::ScanNodes(UWorld* World, TArray<FResourceNodeInfo>& OutNodes)
 {

@@ -1,5 +1,7 @@
 #include "ResourceNodeMarker_ConfigStruct.h"
 #include "ResourceNodeMarker.h"
+#include "Engine/GameInstance.h"
+#include "Engine/World.h"
 
 void FResourceNodeMarker_ConfigStruct::NormalizeLegacyValues(FResourceNodeMarker_ConfigStruct& Config)
 {

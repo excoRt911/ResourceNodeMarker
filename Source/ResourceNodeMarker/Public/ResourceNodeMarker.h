@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-#include "FGResourceNode.h"
+#include "Resources/FGResourceNode.h"
 #include "Subsystems/WorldSubsystem.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogResourceNodeMarker, Log, All);

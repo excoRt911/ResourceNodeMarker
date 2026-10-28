@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 2,
-	"VersionName": "2.0.0",
+	"Version": 3,
+	"VersionName": "2.1.0-dev.1",
 	"FriendlyName": "ResourceNodeMarker",
 	"Description": "Automatically  places color-coded map markers based on resource type and purity when approached.",
 	"Category": "Modding",
@@ -11,9 +11,10 @@
 	"MarketplaceURL": "",
 	"SupportURL": "https://github.com/ASCsk/ResourceNodeMarker",
 	"CanContainContent": true,
-	"IsBetaVersion": false,
+	"IsBetaVersion": true,
 	"IsExperimentalVersion": false,
 	"Installed": false,
+	"BuiltInInitialFeatureState": "Active",
 	"Modules": [
 		{
 			"Name": "ResourceNodeMarker",
@@ -25,9 +26,9 @@
 		{
 			"Name": "SML",
 			"Enabled": true,
-			"SemVersion": "^3.11.3"
+			"SemVersion": "^3.12.0"
 		}
 	],
-	"SemVersion": "2.0.0",
-	"GameVersion": ">=416835"
+	"SemVersion": "2.1.0-dev.1",
+	"GameVersion": ">=491125"
 }

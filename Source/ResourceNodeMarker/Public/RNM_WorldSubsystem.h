@@ -45,6 +45,7 @@ private:
     void OnBuildableConstructed(AFGBuildable* Buildable);
 
 private:
+    UPROPERTY(Transient)
     TArray<FResourceNodeInfo> ResourceNodes;
     TMap<FIntVector, TArray<int32>> SpatialGrid;
     FTimerHandle ProximityTimerHandle;
@@ -54,10 +55,10 @@ private:
     float GridCellSizeCm = 15000.0f;
 
     UPROPERTY()
-    URNM_ResourceVisuals* ResourceVisuals = nullptr;
+    TObjectPtr<URNM_ResourceVisuals> ResourceVisuals = nullptr;
 
     UPROPERTY()
-    URNM_ClusterManager* ClusterManager = nullptr;
+    TObjectPtr<URNM_ClusterManager> ClusterManager = nullptr;
 
     FResourceNodeMarker_ConfigStruct ConfigData;
     bool bConfigLoaded = false;

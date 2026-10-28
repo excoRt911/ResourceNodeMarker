@@ -1,6 +1,7 @@
 #include "RNM_WorldSubsystem.h"
 #include "Engine/World.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 #include "TimerManager.h"
 #include "ResourceNodeMarker.h"
 #include "RNM_NodeScanner.h"

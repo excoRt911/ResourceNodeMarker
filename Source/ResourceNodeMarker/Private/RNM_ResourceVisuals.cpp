@@ -1,8 +1,8 @@
 #include "RNM_ResourceVisuals.h"
 #include "ResourceNodeMarker.h"
-#include "FGItemDescriptor.h"
-#include "FGResourceDescriptor.h"
-#include "FGResourceDescriptorGeyser.h"
+#include "Resources/FGItemDescriptor.h"
+#include "Resources/FGResourceDescriptor.h"
+#include "Resources/FGResourceDescriptorGeyser.h"
 
 namespace
 {

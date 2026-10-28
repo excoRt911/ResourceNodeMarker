@@ -1,9 +1,9 @@
 #include "RNM_MapMarkerService.h"
 #include "ResourceNodeMarker.h"
-#include "FGItemDescriptor.h"
+#include "Resources/FGItemDescriptor.h"
 #include "FGMapManager.h"
-#include "FGResourceDescriptor.h"
-#include "FGResourceNode.h"
+#include "Resources/FGResourceDescriptor.h"
+#include "Resources/FGResourceNode.h"
 
 namespace
 {
@@ -80,7 +80,7 @@ FString GetPurityDisplayLabel(const FResourceNodeCluster& Cluster, const EResour
         if (!Node.NodeActor || Node.Purity != Purity)
             continue;
 
-        const FText GameLabel = Node.NodeActor->GetResoucePurityText();
+        const FText GameLabel = Node.NodeActor->GetResourcePurityText();
         if (!GameLabel.IsEmpty())
             return RNM_MapMarkerService::StripRichTextMarkup(GameLabel.ToString());
         continue;

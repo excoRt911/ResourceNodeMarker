@@ -2,9 +2,9 @@
 #include "RNM_NodeScanner.h"
 #include "RNM_MapMarkerService.h"
 #include "ResourceNodeMarker.h"
-#include "FGItemDescriptor.h"
+#include "Resources/FGItemDescriptor.h"
 #include "FGMapManager.h"
-#include "FGResourceDescriptor.h"
+#include "Resources/FGResourceDescriptor.h"
 
 namespace
 {

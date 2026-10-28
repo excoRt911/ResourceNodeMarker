@@ -87,11 +87,12 @@ private:
     const TMap<FIntVector, TArray<int32>>* SpatialGrid = nullptr;
 
     UPROPERTY()
-    URNM_ResourceVisuals* ResourceVisuals = nullptr;
+    TObjectPtr<URNM_ResourceVisuals> ResourceVisuals = nullptr;
 
     FResourceNodeMarker_ConfigStruct Config;
 
     // Runtime cluster state
+    UPROPERTY(Transient)
     TArray<FResourceNodeCluster> DiscoveredClusters;
     TMap<int32, int32> NodeToClusterMap;
     TSet<int32> DiscoveredNodeIndices;

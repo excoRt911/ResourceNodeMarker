@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "FGResourceNode.h"
-#include "FGResourceDescriptor.h"
+#include "Resources/FGResourceNode.h"
+#include "Resources/FGResourceDescriptor.h"
 #include "RNM_ResourceNodeInfo.generated.h"
 
 USTRUCT()
@@ -12,7 +12,7 @@ struct FResourceNodeInfo
 
     /** Live world actor; may be null after reload if not rescanned. */
     UPROPERTY()
-    AFGResourceNode* NodeActor = nullptr;
+    TObjectPtr<AFGResourceNode> NodeActor = nullptr;
 
     /** World location at scan time (cm). */
     FVector Location;
@@ -34,6 +34,7 @@ struct FResourceNodeCluster
     GENERATED_BODY()
 
     /** Nodes grouped under one map marker. */
+    UPROPERTY()
     TArray<FResourceNodeInfo> Nodes;
 
     /** Centroid of Nodes; used as marker location. */

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
-#include "FGResourceNode.h"
+#include "Resources/FGResourceNode.h"
 #include "RNM_ResourceNodeInfo.h"
 
 /** World scan and 2D spatial indexing for resource node proximity queries. */
