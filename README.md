@@ -4,14 +4,15 @@ Development fork of [ASCsk/ResourceNodeMarker](https://github.com/ASCsk/Resource
 Automatically discovers nearby resource nodes and groups them into colored map markers.
 Original authorship and existing content are preserved.
 
-**Status: source migration in progress. No compiled or in-game-verified release yet.**
+**Status: Development Editor build and Windows Shipping package succeed. In-game behavior is not yet verified.**
 
 ## Target
 
-- Satisfactory 1.2; local validation target CL 513885.
-- Satisfactory Mod Loader 3.12.0, starter project tag `v3.12.0`
-  (commit `1a7d2ca3a4281cf589bd842a814fd7a55eac4a99`, game headers CL 491125).
+- Satisfactory 1.2; local target CL 513885.
+- Satisfactory Mod Loader 3.12 source at commit `8eebc9e659f0b2ff4392d2f8cf6e2cff60c8ea49`,
+  with game headers updated to CL 513885.
 - Custom Satisfactory Unreal Engine 5.6.1, not stock Epic Unreal Engine.
+- Wwise 2025.1.6.9117 with Unreal integration 2025.1.6.9117.4248.
 - Windows game target. Dedicated-server and multiplayer compatibility are not established.
 
 The plugin's minimum game version follows the SML 3.12 SDK baseline. It is a dependency
@@ -35,17 +36,16 @@ and [project setup](https://docs.ficsit.app/satisfactory-modding/latest/Developm
 2. Link GitHub to Epic Games, accept the organization invitation, and complete
    [the modding account linker](https://linker.ficsit.app/link). Download and install
    [the custom engine](https://github.com/satisfactorymodding/UnrealEngine/releases/latest).
-3. Clone the SML starter project at tag `v3.12.0` into a short path.
-4. Install and integrate the Wwise version specified by the dependency guide into
-   `FactoryGame.uproject`, including its SDK/platform components and sound banks.
+3. Use the SML starter project at commit `8eebc9e659f0b2ff4392d2f8cf6e2cff60c8ea49`
+   or a later revision with headers for the target game CL.
+4. Install Wwise 2025.1.6.9117 and integrate Unreal integration 2025.1.6.9117.4248
+   into `FactoryGame.uproject`, including the Windows SDK/platform. Generate Windows
+   SoundBanks for the Wwise project.
 5. Clone this repository into `<StarterProject>/Mods/GameFeatures/ResourceNodeMarker`.
    Regenerate project files, then build **Development Editor / Win64**.
-6. Finish the Game Feature migration: create a data asset of class `FGGameFeatureData`
-   at `/ResourceNodeMarker/ResourceNodeMarker`. Alternatively, enable Python Editor
-   Script Plugin and Editor Scripting Utilities, restart, and run
-   `Scripts/create_game_feature.py` from **Tools > Execute Python Script**.
-   The script has not yet been run against the custom editor. Commit the resulting
-   `.uasset`; it is required and currently absent from this branch.
+6. The required `FGGameFeatureData` asset at `/ResourceNodeMarker/ResourceNodeMarker`
+   is included. The helper script is available at `Scripts/create_game_feature.py` if
+   you need to recreate it in another starter project.
 7. Restart the editor and confirm this feature is **Active**. This mod currently adds
    no custom FGIconLibrary, FGMessage, FGUserSetting, or child input context, so it
    needs no scan rules for those types. Keep the existing SML root/config assets.
@@ -56,10 +56,16 @@ and [project setup](https://docs.ficsit.app/satisfactory-modding/latest/Developm
 See the [SML 3.12 migration guide](https://docs.ficsit.app/satisfactory-modding/latest/Development/UpdatingFromSml311.html)
 for the engine, pointer, and Game Features changes.
 
-## Verification still required
+## Verification status
 
-- Development Editor compilation, Blueprint compilation, and Windows packaging.
-- Launch on CL 513885 without startup errors; load a disposable save.
+- Development Editor / Win64 compilation: passed.
+- Windows Shipping build and Alpakit package: passed.
+- Game Feature asset creation and Active state: passed in the editor.
+- Windows SoundBank generation: passed.
+- Launch on CL 513885 and load a disposable save: not yet tested.
+
+Runtime checks still required:
+
 - Proximity discovery, purity colors, resource icons, and compass settings.
 - Cluster merging and disabled clustering; extractor placement behavior.
 - Save/reload without duplicated or lost markers, including old RNM markers.
